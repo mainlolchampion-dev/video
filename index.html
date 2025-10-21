@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <script>navigator.serviceWorker&&navigator.serviceWorker.register('/sw.js')</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invitation Studio</title>
+  
+    <!-- Basic Content Security Policy (adjust per deployment reverse-proxy) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src *; media-src https: data:;">
+  </head>
+
+  <body class="min-h-screen bg-background text-foreground">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

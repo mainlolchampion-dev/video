@@ -1,0 +1,5 @@
+{
+  "hooks": {
+    "pre-commit": "lint-staged && node scripts/db-check.js && bash scripts/migrations-smoke.sh"
+  }
+}

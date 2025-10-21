@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports: ["8025:8025", "1025:1025"]
+  stripe-cli:
+    image: stripe/stripe-cli:latest
+    command: ["listen", "--forward-to", "http://host.docker.internal:54321/functions/v1/stripe-webhook"]
+    environment:
+      - STRIPE_API_KEY=${STRIPE_API_KEY}
+    network_mode: "host"
